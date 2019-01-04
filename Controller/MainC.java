@@ -24,5 +24,8 @@ public class MainC {
 			model.addAttribute("serverTime", formattedDate );
 			return "main";
 		}
-	
+	@ExceptionHandler(PageNotFoundException.class)
+	public String pagenot() {
+		return "shop/pagenotfound";
+	}
 }
