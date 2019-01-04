@@ -17,8 +17,8 @@
 			<a class="item" href="/W9">Project W9</a>
 		</div>
 		<div class="ui inverted right menu">
-			<a class="item" href="#">Login</a>
-			<a class="item" href="#">Join</a>
+			<a class="item" href="login.w9">Login</a>
+			<a class="item" href="join.w9">Join</a>
 		</div>
 	</div>
 </div>
