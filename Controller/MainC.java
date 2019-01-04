@@ -28,4 +28,8 @@ public class MainC {
 	public String pagenot() {
 		return "shop/pagenotfound";
 	}
+	@RequestMapping(value="/{path}", method=RequestMethod.GET)
+	public String home(@PathVariable("path") String path) {
+			throw new PageNotFoundException();
+	}
 }
