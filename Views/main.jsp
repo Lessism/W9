@@ -8,16 +8,30 @@
 	<link rel="stylesheet" href="resources/SemanticUI/semantic.css">
 	<script src="resources/js/jquery-3.3.1.min.js"></script>
 	<script src="resources/SemanticUI/semantic.min.js"></script>
+	<style>
+		.ui.inverted.left.menu {
+			position:absolute; left:25px
+		}
+		.ui.inverted.right.menu {
+			position:absolute; right:25px
+		}
+		.ui.inverted.header {
+			margin:auto;
+			font-size:25px;
+		}
+	</style>
 </head>
 <body>
-<header class="ui inverted segment menu">
-		<a class="ui inverted button header item" href="https://github.com/Lessism">Lessism</a>
-	<div class="ui inverted borderless menu container">
-		<a class="ui button item" href="/W9" style="margin:auto;font-size:xx-large;padding:10px">Project W9</a>
-	</div>
-	<div class="ui inverted right menu">
-		<a class="item" href="login.w9">Login</a>
-		<a class="item" href="join.w9">Join</a>
+<header class="ui inverted segment">
+	<div class="ui inverted menu container">
+		<div class="ui inverted left menu">
+			<a class="ui inverted button item" href="https://github.com/Lessism">Lessism</a>
+		</div>
+		<a class="ui inverted header" href="/W9">Project W9</a>
+		<div class="ui inverted right menu">
+			<a class="item" href="login.w9">Login</a>
+			<a class="item" href="join.w9">Join</a>
+		</div>
 	</div>
 </header>
 <div class="ui container">
