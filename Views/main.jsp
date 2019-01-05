@@ -1,13 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ page session="true" %>
+
 <html>
 <head>
 	<title>Project W9</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="resources/SemanticUI/semantic.css">
-	<script src="resources/js/jquery-3.3.1.min.js"></script>
-	<script src="resources/SemanticUI/semantic.min.js"></script>
+	<link rel="stylesheet" href="../resources/css/Lcss.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+KR:500&amp;subset=korean" >
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.min.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.min.js"></script>
 </head>
 <body>
 <header class="ui inverted segment">
@@ -16,8 +19,8 @@
 			<a class="ui inverted button" href="https://github.com/Lessism">Lessism</a>
 		</div>
 		<div class="ui inverted right menu">
-			<a class="item" href="login.w9">Login</a>
-			<a class="item" href="join.w9">Join</a>
+			<a class="item" href="http://localhost:8080/W9/member/login.w9">Login</a>
+			<a class="item" href="http://localhost:8080/W9/member/join.w9">Join</a>
 		</div>
 	</div>
 	<div class="ui center aligned container">
