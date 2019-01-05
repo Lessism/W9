@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.f.k.r {
+	font-family:'Noto Serif KR', serif;
+}
+hr {
+	margin-top:15px;
+	margin-bottom:15px;
+}
+label.ui.basic.label.llab {
+	font-family:'Noto Serif KR', serif;
+	text-align:center;
+	width:100px;
+	border-right:2px solid black;
+}
+label.ui.left.pointing.basic.label.llab.chk {
+	display:none;
+	width:250px;
+}
