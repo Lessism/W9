@@ -18,4 +18,7 @@ public class MemberDAO {
 	public int Join(MemberVO mvo) {
 		return db.insert("Member.join", mvo);
 	}
+	public MemberVO Login(MemberVO mvo) {
+		return db.selectOne("Member.login", mvo);
+	}
 }
