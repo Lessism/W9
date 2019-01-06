@@ -8,13 +8,13 @@
 		<hr>
 		<div class="ui field">
 			<div class="ui labeled input">
-				<label class="ui basic label llab" for="id">아이디</label>
+				<label class="ui basic label llab f k r" for="id">아이디</label>
 				<mvo:input type="text" path="id" id="id" placeholder="ID"/>
 			</div>
 		</div>
 		<div class="ui field">
 			<div class="ui labeled input">
-				<label class="ui basic label llab" for="pw">암호</label>
+				<label class="ui basic label llab f k r" for="pw">암호</label>
 				<mvo:input type="password" path="pw" id="pw" placeholder="Password"/>
 			</div>
 		</div>
