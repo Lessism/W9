@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
 <head>
@@ -17,12 +18,18 @@
 			<a class="ui inverted button" href="https://github.com/Lessism">Lessism</a>
 		</div>
 		<div class="ui inverted right menu">
-			<a class="item" href="http://localhost:8080/W9/member/login.w9">Login</a>
-			<a class="item" href="http://localhost:8080/W9/member/join.w9">Join</a>
+			<c:if test="${!login}">
+				<a class="item" href="http://localhost:8080/W9/member/login.w9">Login</a>
+				<a class="item" href="http://localhost:8080/W9/member/join.w9">Join</a>
+			</c:if>
+			<c:if test="${login}">
+				<a class="item" href="http://localhost:8080/W9/member/logout.w9">Logout</a>
+				<a class="item" href="http://localhost:8080/W9/member/info.w9">Info</a>
+			</c:if>
 		</div>
 	</div>
 	<div class="ui center aligned container">
-		<a class="ui inverted header" href="/W9">Project W9</a>
+		<a class="ui inverted header f k r" href="/W9">Project W9</a>
 	</div>
 	<nav class="ui inverted secondary pointing menu container">
 		<a class="active item" href="/W9">Home</a>
