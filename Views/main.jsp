@@ -6,14 +6,14 @@
 <head>
 	<title>Project W9</title>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="../resources/css/Lcss.css">
+	<link rel="stylesheet" href="resources/css/Lcss.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+KR:500&amp;subset=korean" >
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.min.css">
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.min.js"></script>
 </head>
 <body>
-<header class="ui inverted segment">
+<header class="ui inverted vertical segment">
 	<div class="ui inverted menu container">
 		<div class="ui inverted left menu">
 			<a class="ui inverted button" href="https://github.com/Lessism">Lessism</a>
@@ -30,7 +30,7 @@
 		<a class="active item" href="/W9">Home</a>
 	</nav>
 </header>
-<div class="ui container">
+<div class="ui black segment container">
 	<h1>Main page</h1>
 	<hr>
 	<P>The time on the server is ${serverTime}.</P>
@@ -41,5 +41,10 @@
 	<p>Eclips</p>
 	<p>MySQL</p>
 </div>
+<footer class="ui inverted vertical center aligned footer segment">
+	<div class="ui text container f k r">
+		<h6 class="f k r">ver.멤버</h6>
+	</div>
+</footer>
 </body>
 </html>
