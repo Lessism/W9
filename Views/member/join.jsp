@@ -8,36 +8,36 @@
 		<hr>
 		<div class="ui field">
 			<div class="ui labeled input">
-				<label class="ui basic label llab" for="id">아이디</label>
+				<label class="ui basic label llab f k r" for="id">아이디</label>
 				<mvo:input type="text" path="id" id="id" placeholder="ID"/>
 				<label class="ui left pointing basic label llab chk"></label>
 			</div>
 		</div>
 		<div class="ui field">
 			<div class="ui labeled input">
-				<label class="ui basic label llab" for="pw">암호</label>
+				<label class="ui basic label llab f k r" for="pw">암호</label>
 				<mvo:input type="password" path="pw" id="pw" placeholder="Password"/>
 				<label class="ui left pointing basic label llab chk"></label>
 			</div>
 		</div>
 		<div class="ui field">
 			<div class="ui labeled input">
-				<label class="ui basic label llab" for="pwc">암호확인</label>
+				<label class="ui basic label llab f k r" for="pwc">암호확인</label>
 				<input type="password" id="pwc" placeholder="Confirm Password">
 				<label class="ui left pointing basic label llab chk"></label>
 			</div>
 		</div>
 		<div class="ui field">
 			<div class="ui labeled input field">
-				<label class="ui basic label llab" for="nick">닉네임</label>
+				<label class="ui basic label llab f k r" for="nick">닉네임</label>
 				<mvo:input type="text" path="nick" id="nick" placeholder="Nickname"/>
 				<label class="ui left pointing basic label llab chk"></label>
 			</div>
 		</div>
 		<div class="ui field">
 			<div class="ui labeled input field">
-				<label class="ui basic label llab" for="email">이메일</label>
-				<mvo:input type="email" path="email" id="email" placeholder="Email Adress"/>
+				<label class="ui basic label llab f k r" for="email">이메일</label>
+				<mvo:input type="text" path="email" id="email" placeholder="Email Adress"/>
 				<label class="ui left pointing basic label llab chk"></label>
 			</div>
 		</div>
