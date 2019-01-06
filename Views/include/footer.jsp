@@ -5,5 +5,6 @@
 		<h6 class="f k r">ver.Member</h6>
 	</div>
 </footer>
+</div>
 </body>
 </html>
