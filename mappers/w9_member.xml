@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Member">
-	<insert id="join" parameterType="com.lessism.w9.vo.MemberVO">
-		INSERT INTO w9_member(id, pw, nick, email) VALUES(#{id}, #{pw}, #{nick}, #{email})
+	<insert id="join" parameterType="mvo">
+		INSERT INTO
+		w9_member (id, pw, nick, email)
+		VALUES (#{id}, #{pw}, #{nick}, #{email})
 	</insert>
-	<select id="login" parameterType="com.lessism.w9.vo.MemberVO" resultType="com.lessism.w9.vo.MemberVO">
-		SELECT * FROM w9_member WHERE id = #{id} AND pw = #{pw}
+	<select id="login" parameterType="mvo" resultType="mvo">
+		SELECT * 
+		FROM w9_member 
+		WHERE id = #{id}
+		AND pw = #{pw}
 	</select>
 </mapper>
