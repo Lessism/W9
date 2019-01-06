@@ -3,6 +3,11 @@
 .f.k.r {
 	font-family:'Noto Serif KR', serif;
 }
+footer.ui.inverted.vertical.footer.segment{
+	position:absolute;
+	bottom:0px;
+	width:100%;
+}
 hr {
 	margin-top:15px;
 	margin-bottom:15px;
