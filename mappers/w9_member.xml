@@ -4,4 +4,7 @@
 	<insert id="join" parameterType="com.lessism.w9.vo.MemberVO">
 		INSERT INTO w9_member(id, pw, nick, email) VALUES(#{id}, #{pw}, #{nick}, #{email})
 	</insert>
+	<select id="login" parameterType="com.lessism.w9.vo.MemberVO" resultType="com.lessism.w9.vo.MemberVO">
+		SELECT * FROM w9_member WHERE id = #{id} AND pw = #{pw}
+	</select>
 </mapper>
