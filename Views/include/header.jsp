@@ -11,7 +11,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.min.js"></script>
 </head>
 <body>
-<header class="ui inverted segment">
+<header class="ui inverted vertical segment">
 	<div class="ui inverted menu container">
 		<div class="ui inverted left menu">
 			<a class="ui inverted button" href="https://github.com/Lessism">Lessism</a>
