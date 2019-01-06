@@ -31,7 +31,7 @@
 	</nav>
 </header>
 <div class="ui black segment container">
-	<h1>Main page</h1>
+	<h1>${nick}</h1>
 	<hr>
 	<P>The time on the server is ${serverTime}.</P>
 	<p>HTML</p>
