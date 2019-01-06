@@ -15,10 +15,24 @@ public class MemberDAO {
 	@Resource(name="sqlSession")
 	private SqlSession db = null;
 	
+//  회원가입
 	public int Join(MemberVO mvo) {
 		return db.insert("Member.join", mvo);
 	}
+	
+//  회원탈퇴
+	public int Withdrawal(MemberVO mvo) {
+		return db.delete("Member.withdrawal", mvo);
+	}
+	
+//  회원정보수정
+	public int InfoUpd(MemberVO mvo) {
+		return db.update("Member.infoupd", mvo);
+	}
+	
+//  로그인
 	public MemberVO Login(MemberVO mvo) {
 		return db.selectOne("Member.login", mvo);
 	}
+	
 }
