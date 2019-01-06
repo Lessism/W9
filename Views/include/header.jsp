@@ -12,6 +12,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.0/semantic.min.js"></script>
 </head>
 <body>
+<div class="relative height">
 <header class="ui inverted vertical segment">
 	<div class="ui inverted menu container">
 		<div class="ui inverted left menu">
@@ -33,5 +34,6 @@
 	</div>
 	<nav class="ui inverted secondary pointing menu container">
 		<a class="active item" href="/W9">Home</a>
+		<a class="item" href="http://localhost:8080/W9/board/board.w9">Board</a>
 	</nav>
 </header>
