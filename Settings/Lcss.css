@@ -13,7 +13,6 @@ hr {
 	margin-bottom:15px;
 }
 label.ui.basic.label.llab {
-	font-family:'Noto Serif KR', serif;
 	text-align:center;
 	width:100px;
 	border-right:2px solid black;
@@ -21,4 +20,12 @@ label.ui.basic.label.llab {
 label.ui.left.pointing.basic.label.llab.chk {
 	display:none;
 	width:250px;
+}
+input[type="text"].l.inp[readonly='readonly'] {
+	cursor: default;
+	opacity: 0.45 !important;
+	background-image: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	pointer-events: none !important;
 }
