@@ -1,12 +1,18 @@
 @charset "UTF-8";
 
+.relative.height {
+	min-height: 100%;
+	position: relative;
+	padding-bottom: 100px;
+}
 .f.k.r {
 	font-family:'Noto Serif KR', serif;
 }
 footer.ui.inverted.vertical.footer.segment{
 	position:absolute;
-	bottom:0px;
+	bottom:0;
 	width:100%;
+	height:100px
 }
 hr {
 	margin-top:15px;
