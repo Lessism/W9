@@ -15,6 +15,7 @@ public class MemberDAO {
 	@Resource(name="sqlSession")
 	private SqlSession db = null;
 	
+	
 //  회원가입
 	public int Join(MemberVO mvo) {
 		return db.insert("Member.join", mvo);
@@ -27,7 +28,7 @@ public class MemberDAO {
 	
 //  회원정보수정
 	public int InfoUpd(MemberVO mvo) {
-		return db.update("Member.infoupd", mvo);
+		return db.update("Member.update", mvo);
 	}
 	
 //  로그인
