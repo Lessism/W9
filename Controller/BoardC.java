@@ -19,10 +19,10 @@ public class BoardC {
 	@Autowired
 	private BoardDAO bdao = null;
 	
-	
-	@RequestMapping(value="/board.w9")
-	public String Board() {
-		return "/board/board";
+//  게시글 목록
+	@RequestMapping(value="/list.w9")
+	public ModelAndView Board() {
+		return new ModelAndView("/board/list", "list", bdao.list());
 	}
 	
 	
@@ -36,7 +36,7 @@ public class BoardC {
 	@RequestMapping(value="/write.w9", method=RequestMethod.POST)
 	public String Write(@ModelAttribute("bvo") BoardVO bvo) {
 		bdao.write(bvo);
-		return "redirect:/board/board.w9";
+		return "redirect:/board/list.w9";
 	}
 
 }
