@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib prefix="bvo" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <jsp:include page="../include/header.jsp"/>
 <section class="ui black segment container">
@@ -16,13 +16,15 @@
 		</tr>
 		</thead>
 		<tbody>
-		<tr>
-			<td>1</td>
-			<td>Board Test 1</td>
-			<td>Less</td>
-			<td>1</td>
-			<td>2019.1.1</td>
-		</tr>
+		<c:forEach var="bvo" items="${list}">
+			<tr>
+				<td>${bvo.no}</td>
+				<td>${bvo.title}</td>
+				<td>${bvo.writer}</td>
+				<td>${bvo.hit}</td>
+				<td>${bvo.writedate}</td>
+			</tr>
+		</c:forEach>
 		</tbody>
 	</table>
 	<div class="ui center aligned container">
