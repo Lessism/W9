@@ -17,7 +17,7 @@
 	</delete>
 	
 <!-- 회원정보수정 -->
-	<update id="infoupd" parameterType="mvo">
+	<update id="update" parameterType="mvo">
 		UPDATE w9_member
 		SET nick = #{nick}, email = #{email}
 		WHERE id = #{id}
