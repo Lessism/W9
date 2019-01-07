@@ -9,5 +9,11 @@
 		VALUES (#{writer}, #{title}, #{content})
 	</insert>
 	
+<!-- 게시글 목록 -->
+	<select id="list" resultType="bvo">
+		SELECT *
+		FROM w9_board
+		ORDER BY no DESC
+	</select>
 
 </mapper>
