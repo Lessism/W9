@@ -1,31 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="bvo" uri="http://www.springframework.org/tags/form" %>
 
 <jsp:include page="../include/header.jsp"/>
 <section class="ui black segment text container">
-	<form class="ui form" action="http://localhost:8080/W9/member/info.w9" method="post">
+	<bvo:form class="ui form" modelAttribute="bvo" action="${pageContext.request.contextPath}/board/write.w9" method="post">
 		<div class="ui two fields">
 			<div class="ui field">
-				<h1 class="ui center aligned header f k r">게시글</h1>
+				<h1 class="ui center aligned header f k r">게시글 작성</h1>
 			</div>
 			<div class="ui field">
 				<div class="ui labeled input">
 					<label class="ui basic label llab f k r" for="id">작성자</label>
-					<input id="ㅁㄴㅇ" type="text"/>
+					<bvo:input class="l inp" path="writer" type="text" readonly="true"/>
 				</div>
 			</div>
 		</div>
 		<div class="ui field">
 			<label class="ui basic label llab f k r" for="id">제목</label>
-			<input class="l inp" id="id" type="text"/>
+			<bvo:input class="l inp" path="title" type="text"/>
 		</div>
 		<div class="ui field">
 			<label class="ui basic label llab f k r" for="id">내용</label>
-			<textarea rows="20"></textarea>
+			<bvo:textarea path="content" rows="20"></bvo:textarea>
 		</div>
 		<div class="ui center aligned container">
-			<a class="ui black button f k r" href="http://localhost:8080/W9/board/write.w9">글쓰기</a>
-			<a class="ui button f k r" href="http://localhost:8080/W9">목록</a>
+			<input class="ui black button f k r" type="submit" value="작성">
+			<a class="ui button f k r" href="${pageContext.request.contextPath}/board/board.w9">목록</a>
 	</div>
-	</form>
+	</bvo:form>
 </section>
 <jsp:include page="../include/footer.jsp"/>
