@@ -14,5 +14,6 @@
 </settings>
 <typeAliases>
 	<typeAlias alias="mvo" type="com.lessism.w9.vo.MemberVO"/>
+	<typeAlias alias="bvo" type="com.lessism.w9.vo.BoardVO"/>
 </typeAliases>
 </configuration>
