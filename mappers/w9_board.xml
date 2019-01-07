@@ -2,5 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Board">
 
+<!-- 게시글 작성 -->
+	<insert id="write" parameterType="bvo">
+		INSERT INTO
+		w9_board (writer, title, content)
+		VALUES (#{writer}, #{title}, #{content})
+	</insert>
+	
 
 </mapper>
