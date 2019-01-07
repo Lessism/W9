@@ -6,9 +6,9 @@
 	http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://211.110.165.201:3306/less?serverTimezone=Asia/Seoul"/>
-		<property name="username" value="Less"/>
-		<property name="password" value="1347"/>
+		<property name="url" value=""/>
+		<property name="username" value=""/>
+		<property name="password" value=""/>
 	</bean>
 	<bean id="log4jDataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
 		<constructor-arg ref="dataSource"/>
