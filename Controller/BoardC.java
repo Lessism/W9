@@ -21,20 +21,20 @@ public class BoardC {
 	
 //  게시글 목록
 	@RequestMapping(value="/list.w9")
-	public ModelAndView Board() {
+	public ModelAndView list() {
 		return new ModelAndView("/board/list", "list", bdao.list());
 	}
 	
 	
 // 게시글 작성
 	@RequestMapping(value="/write.w9", method=RequestMethod.GET)
-	public ModelAndView Write(@SessionAttribute("info") MemberVO mvo, BoardVO bvo) {
+	public ModelAndView write(@SessionAttribute("info") MemberVO mvo, BoardVO bvo) {
 		bvo.setWriter(mvo.getNick());
 		return new ModelAndView("/board/write", "bvo", bvo);
 	}
 	
 	@RequestMapping(value="/write.w9", method=RequestMethod.POST)
-	public String Write(@ModelAttribute("bvo") BoardVO bvo) {
+	public String write(@ModelAttribute("bvo") BoardVO bvo) {
 		bdao.write(bvo);
 		return "redirect:/board/list.w9";
 	}
