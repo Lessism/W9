@@ -1,5 +1,7 @@
 package com.lessism.w9.dao;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.apache.ibatis.session.SqlSession;
@@ -21,7 +23,9 @@ public class BoardDAO {
 		return db.insert("Board.write", bvo);
 	}
 	
-	
-//
+//  게시글 목록
+	public List<BoardVO> list() {
+		return db.selectList("Board.list");
+	}
 
 }
