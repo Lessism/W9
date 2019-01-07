@@ -33,12 +33,12 @@ public class MemberC {
 		mdao.Join(mvo);
 		mvo = mdao.Login(mvo);
 		session.setAttribute("login", true);
-		session.setAttribute("minfo", mvo);
+		session.setAttribute("info", mvo);
 		return "redirect:/";
 	}
 	
 	@RequestMapping(value="withdrawal.w9")
-	public String Withdrawal(@SessionAttribute("minfo") MemberVO mvo, HttpSession session) {
+	public String Withdrawal(@SessionAttribute("info") MemberVO mvo, HttpSession session) {
 		mdao.Withdrawal(mvo);
 		session.invalidate();
 		return "redirect:/";
@@ -48,14 +48,14 @@ public class MemberC {
 //  회원정보, 회원정보수정
 	
 	@RequestMapping(value="/info.w9", method=RequestMethod.GET)
-	public ModelAndView info(@SessionAttribute("minfo") MemberVO mvo) {
+	public ModelAndView info(@SessionAttribute("info") MemberVO mvo) {
 		return new ModelAndView("member/info", "mvo", mvo);
 	}
 	
 	@RequestMapping(value="/info.w9", method=RequestMethod.POST)
 	public String info(@ModelAttribute MemberVO mvo, HttpSession session) {
 		mdao.InfoUpd(mvo);
-		session.setAttribute("minfo", mvo);
+		session.setAttribute("info", mvo);
 		return "redirect:/";
 	}
 	
@@ -69,10 +69,10 @@ public class MemberC {
 	
 	@RequestMapping(value="/login.w9", method=RequestMethod.POST)
 	public String Login(@ModelAttribute("mvo") MemberVO mvo, HttpSession session) {
-		MemberVO rmvo = mdao.Login(mvo);
-		if (rmvo != null) {
+		mvo = mdao.Login(mvo);
+		if (mvo != null) {
 			session.setAttribute("login", true);
-			session.setAttribute("minfo", rmvo);
+			session.setAttribute("info", mvo);
 			return "redirect:/";
 		} else {
 			return "redirect:/member/login.w9";
