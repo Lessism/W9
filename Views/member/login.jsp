@@ -3,7 +3,7 @@
 
 <jsp:include page="../include/header.jsp"/>
 <section class="ui black segment text container">
-	<mvo:form class="ui form" modelAttribute="mvo" action="http://localhost:8080/W9/member/login.w9" method="post">
+	<mvo:form class="ui form" modelAttribute="mvo" action="${pageContext.request.contextPath}/member/login.w9" method="post">
 		<h1 class="ui center aligned header f k r">로그인</h1>
 		<hr>
 		<div class="ui field">
@@ -21,7 +21,7 @@
 		<hr>
 		<div class="ui center aligned container">
 			<input class="ui black button f k r" type="submit" value="로그인">
-			<a class="ui button f k r" href="http://localhost:8080/W9">메인</a>
+			<a class="ui button f k r" href="${pageContext.request.contextPath}">메인</a>
 		</div>
 	</mvo:form>
 </section>
