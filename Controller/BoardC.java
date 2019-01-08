@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -38,5 +39,28 @@ public class BoardC {
 		bdao.write(bvo);
 		return "redirect:/board/list.w9";
 	}
-
+	
+	
+//  게시글 내용
+	@RequestMapping(value="/content.w9", method=RequestMethod.GET)
+	public ModelAndView content(@RequestParam("no") int no, BoardVO bvo) {
+		bvo = bdao.content(no);
+		return new ModelAndView("/board/content", "bvo", bvo);
+	}
+	
+	
+//  게시글 수정
+	@RequestMapping(value="/update.w9", method=RequestMethod.POST)
+	public String update(@ModelAttribute("bvo") BoardVO bvo) {
+		bdao.update(bvo);
+		return "redirect:/board/list.w9";
+	}
+	
+	
+//  게시글 삭제
+	@RequestMapping(value="/delete.w9", method=RequestMethod.GET)
+	public String delete(@RequestParam("no") int no) {
+		bdao.delete(no);
+		return "redirect:/board/list.w9";
+	}
 }
