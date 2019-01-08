@@ -19,7 +19,7 @@
 		<c:forEach var="bvo" items="${list}">
 			<tr>
 				<td>${bvo.no}</td>
-				<td>${bvo.title}</td>
+				<td><a href="${pageContext.request.contextPath}/board/content.w9?no=${bvo.no}">${bvo.title}</a></td>
 				<td>${bvo.writer}</td>
 				<td>${bvo.hit}</td>
 				<td>${bvo.writedate}</td>
