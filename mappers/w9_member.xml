@@ -10,7 +10,7 @@
 	</insert>
 	
 <!-- 회원탈퇴 -->
-	<delete id="withdrawal">
+	<delete id="delete">
 		DELETE
 		FROM w9_member
 		WHERE id = #{id}
@@ -29,5 +29,4 @@
 		FROM w9_member
 		WHERE id = #{id} AND pw = #{pw}
 	</select>
-	
 </mapper>
