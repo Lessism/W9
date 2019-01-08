@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
@@ -19,11 +19,11 @@
 			<a class="ui inverted button" href="https://github.com/Lessism">Lessism</a>
 		</div>
 		<div class="ui inverted right menu">
-			<c:if test="${!login}">
+			<c:if test="${info eq null}">
 				<a class="item" href="${pageContext.request.contextPath}/member/login.w9">Login</a>
 				<a class="item" href="${pageContext.request.contextPath}/member/join.w9">Join</a>
 			</c:if>
-			<c:if test="${login}">
+			<c:if test="${info ne null}">
 				<a class="item" href="${pageContext.request.contextPath}/member/logout.w9">Logout</a>
 				<a class="item" href="${pageContext.request.contextPath}/member/info.w9">Info</a>
 			</c:if>
@@ -33,7 +33,7 @@
 		<a class="ui inverted header f k r" href="${pageContext.request.contextPath}">Project W9</a>
 	</div>
 	<nav class="ui inverted secondary pointing menu container">
-		<a class="active item" href="/W9">Home</a>
+		<a class="active item" href="${pageContext.request.contextPath}">Home</a>
 		<a class="item" href="${pageContext.request.contextPath}/board/list.w9">Board</a>
 	</nav>
 </header>
