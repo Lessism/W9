@@ -1,5 +1,7 @@
 package com.lessism.w9;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -62,5 +64,24 @@ public class BoardC {
 	public String delete(@RequestParam("no") int no) {
 		bdao.delete(no);
 		return "redirect:/board/list.w9";
+	}
+	
+//  이전글, 다음글
+	@RequestMapping(value={"/prev.w9", "/next.w9"}, method=RequestMethod.GET)
+	public String prevnext(@RequestParam Map<String, Object> map) {
+		if (map.get("prevno") != null) {
+			map.put("minmax", "MAX");
+			map.put("sign", "<");
+			map.put("no", map.get("prevno"));
+		}
+		if (map.get("nextno") != null) {
+			map.put("minmax", "MIN");
+			map.put("sign", ">");
+			map.put("no", map.get("nextno"));
+		}
+		if (bdao.prevnext(map) == null) {
+			return "redirect:/board/list.w9";
+		}
+		return "redirect:/board/content.w9?no="+bdao.prevnext(map);
 	}
 }
