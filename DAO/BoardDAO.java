@@ -1,6 +1,7 @@
 package com.lessism.w9.dao;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
@@ -41,5 +42,10 @@ public class BoardDAO {
 //  게시글 삭제
 	public int delete(int no) {
 		return db.delete("Board.delete", no);
+	}
+	
+//  이전글, 다음글
+	public String prevnext(Map<String, Object> map) {
+		return db.selectOne("Board.prevnext", map);
 	}
 }
