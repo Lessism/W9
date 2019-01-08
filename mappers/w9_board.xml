@@ -16,4 +16,24 @@
 		ORDER BY no DESC
 	</select>
 
+<!-- 게시글 내용 -->
+	<select id="content" parameterType="int" resultType="bvo">
+		SELECT *
+		FROM w9_board
+		WHERE no = #{no}
+	</select>
+	
+<!-- 게시글 수정 -->
+	<update id="update" parameterType="bvo">
+		UPDATE w9_board
+		SET title = #{title}, content = #{content}
+		WHERE no = #{no}
+	</update>
+
+<!-- 게시글 삭제 -->
+	<delete id="delete" parameterType="int">
+		DELETE
+		FROM w9_board
+		WHERE no = #{no}
+	</delete>
 </mapper>
