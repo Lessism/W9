@@ -41,10 +41,12 @@
 			<bvo:textarea path="content" id="content" rows="20"></bvo:textarea>
 		</div>
 		<div class="ui center aligned container">
+			<a class="absolute left f k r" href="${pageContext.request.contextPath}/board/prev.w9?prevno=${bvo.no}">Prev</a>
 			<input class="ui black button f k r" type="submit" value="수정">
 			<a class="ui red button f k r" href="${pageContext.request.contextPath}/board/delete.w9?no=${bvo.no}">삭제</a>
 			<a class="ui button f k r" href="${pageContext.request.contextPath}/board/list.w9">목록</a>
-	</div>
+			<a class="absolute right f k r" href="${pageContext.request.contextPath}/board/next.w9?nextno=${bvo.no}">Next</a>
+		</div>
 	</bvo:form>
 </section>
 <jsp:include page="../include/footer.jsp"/>
