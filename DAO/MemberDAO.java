@@ -17,23 +17,22 @@ public class MemberDAO {
 	
 	
 //  회원가입
-	public int Join(MemberVO mvo) {
+	public int join(MemberVO mvo) {
 		return db.insert("Member.join", mvo);
 	}
 	
 //  회원탈퇴
-	public int Withdrawal(MemberVO mvo) {
-		return db.delete("Member.withdrawal", mvo);
+	public int delete(MemberVO mvo) {
+		return db.delete("Member.delete", mvo);
 	}
 	
 //  회원정보수정
-	public int InfoUpd(MemberVO mvo) {
+	public int update(MemberVO mvo) {
 		return db.update("Member.update", mvo);
 	}
 	
 //  로그인
-	public MemberVO Login(MemberVO mvo) {
+	public MemberVO login(MemberVO mvo) {
 		return db.selectOne("Member.login", mvo);
 	}
-	
 }
