@@ -27,5 +27,19 @@ public class BoardDAO {
 	public List<BoardVO> list() {
 		return db.selectList("Board.list");
 	}
-
+	
+//  게시글 내용
+	public BoardVO content(int no) {
+		return db.selectOne("Board.content", no);
+	}
+	
+//  게시글 수정
+	public int update(BoardVO bvo) {
+		return db.update("Board.update", bvo);
+	}
+	
+//  게시글 삭제
+	public int delete(int no) {
+		return db.delete("Board.delete", no);
+	}
 }
