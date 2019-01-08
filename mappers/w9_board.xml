@@ -36,4 +36,11 @@
 		FROM w9_board
 		WHERE no = #{no}
 	</delete>
+	
+<!-- 이전글, 다음글 -->
+	<select id="prevnext" parameterType="map" resultType="String">
+		SELECT ${minmax}(no)
+		FROM w9_board
+		WHERE no ${sign} #{no}
+	</select>
 </mapper>
