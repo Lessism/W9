@@ -10,22 +10,22 @@
 			</div>
 			<div class="ui field">
 				<div class="ui labeled input">
-					<label class="ui basic label llab f k r" for="id">작성자</label>
-					<bvo:input class="l inp" path="writer" type="text" readonly="true"/>
+					<label class="ui basic label llab f k r" for="writer">작성자</label>
+					<bvo:input class="l inp" path="writer" id="writer" type="text" readonly="true"/>
 				</div>
 			</div>
 		</div>
 		<div class="ui field">
-			<label class="ui basic label llab f k r" for="id">제목</label>
-			<bvo:input class="l inp" path="title" type="text"/>
+			<label class="ui basic label llab f k r" for="title">제목</label>
+			<bvo:input class="l inp" path="title" id="title" type="text"/>
 		</div>
 		<div class="ui field">
-			<label class="ui basic label llab f k r" for="id">내용</label>
-			<bvo:textarea path="content" rows="20"></bvo:textarea>
+			<label class="ui basic label llab f k r" for="content">내용</label>
+			<bvo:textarea path="content" id="content" rows="20"></bvo:textarea>
 		</div>
 		<div class="ui center aligned container">
 			<input class="ui black button f k r" type="submit" value="작성">
-			<a class="ui button f k r" href="${pageContext.request.contextPath}/board/board.w9">목록</a>
+			<a class="ui button f k r" href="${pageContext.request.contextPath}/board/list.w9">목록</a>
 	</div>
 	</bvo:form>
 </section>
