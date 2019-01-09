@@ -34,6 +34,6 @@
 	</div>
 	<nav class="ui inverted secondary pointing menu container">
 		<a class="active item" href="${pageContext.request.contextPath}">Home</a>
-		<a class="item" href="${pageContext.request.contextPath}/board/list.w9">Board</a>
+		<a class="item" href="${pageContext.request.contextPath}/board/list.w9?page=1">Board</a>
 	</nav>
 </header>
