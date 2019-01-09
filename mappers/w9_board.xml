@@ -2,45 +2,83 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Board">
 
-<!-- 게시글 작성 -->
+<!--	 게시글 작성 	-->
+
 	<insert id="write" parameterType="bvo">
 		INSERT INTO
-		w9_board (writer, title, content)
-		VALUES (#{writer}, #{title}, #{content})
+		w9_board
+			(writer, title, content)
+		VALUES
+			(#{writer}, #{title}, #{content})
 	</insert>
 	
-<!-- 게시글 목록 -->
-	<select id="list" resultType="bvo">
-		SELECT *
-		FROM w9_board
-		ORDER BY no DESC
-	</select>
-
-<!-- 게시글 내용 -->
-	<select id="content" parameterType="int" resultType="bvo">
-		SELECT *
-		FROM w9_board
-		WHERE no = #{no}
-	</select>
 	
-<!-- 게시글 수정 -->
-	<update id="update" parameterType="bvo">
-		UPDATE w9_board
-		SET title = #{title}, content = #{content}
-		WHERE no = #{no}
-	</update>
+<!--	 게시글 수정 	-->
 
-<!-- 게시글 삭제 -->
+	<update id="update" parameterType="bvo">
+		UPDATE
+			w9_board
+		SET
+			title = #{title},
+			content = #{content}
+		WHERE
+			no = #{no}
+	</update>
+	
+	
+<!--	 게시글 삭제 	-->
+
 	<delete id="delete" parameterType="int">
 		DELETE
-		FROM w9_board
-		WHERE no = #{no}
+		FROM
+			w9_board
+		WHERE
+			no = #{no}
 	</delete>
 	
-<!-- 이전글, 다음글 -->
+	
+<!--	 게시글 목록		-->
+
+	<select id="list" resultType="bvo">
+		SELECT
+			no, writer, title, hit, writedate
+		FROM
+			w9_board
+		ORDER BY
+			no DESC
+	</select>
+	
+	
+<!--	 게시글 내용 	-->
+
+	<select id="content" parameterType="int" resultType="bvo">
+		SELECT
+			*
+		FROM
+			w9_board
+		WHERE
+			no = #{no}
+	</select>
+	
+	
+<!--	이전글, 다음글	 -->
+
 	<select id="prevnext" parameterType="map" resultType="String">
-		SELECT ${minmax}(no)
-		FROM w9_board
-		WHERE no ${sign} #{no}
+		SELECT
+			${minmax}(no)
+		FROM
+			w9_board
+		WHERE
+			no ${sign} #{no}
+	</select>
+	
+	
+<!-- 	총 게시물	 -->
+
+	<select id="totalpost" resultType="int">
+		SELECT
+			COUNT(no) totalpost
+		FROM
+			w9_board
 	</select>
 </mapper>
