@@ -28,8 +28,23 @@
 		</tbody>
 	</table>
 	<div class="ui center aligned container">
-		<a>Pagenation</a>
+		<div class="ui pagination menu">
+			<c:forEach begin="${param.page}" end="${param.page+3}" var="startpage">
+				<c:if test="${startpage-4 > 0}">
+					<a class="item" href="${pageContext.request.contextPath}/board/list.w9?page=${startpage-4}">${startpage-4}</a>
+				</c:if>
+			</c:forEach>
+			<div class="ui inverted pagination menu">
+				<a class="item">${param.page}</a>
+			</div>
+			<c:forEach begin="${param.page}" end="${param.page+3}" var="endpage">
+				<c:if test="${endpage < totalpage}">
+					<a class="item" href="${pageContext.request.contextPath}/board/list.w9?page=${endpage+1}">${endpage+1}</a>
+				</c:if>
+			</c:forEach>
+		</div>
 	</div>
+	<hr>
 	<div class="ui center aligned container">
 		<a class="ui black button f k r" href="${pageContext.request.contextPath}/board/write.w9">글쓰기</a>
 		<a class="ui button f k r" href="${pageContext.request.contextPath}">메인</a>
