@@ -18,11 +18,11 @@
 		<tbody>
 		<c:forEach var="bvo" items="${list}">
 			<tr>
-				<td>${bvo.no}</td>
-				<td><a href="${pageContext.request.contextPath}/board/content.w9?no=${bvo.no}">${bvo.title}</a></td>
-				<td>${bvo.writer}</td>
-				<td>${bvo.hit}</td>
-				<td>${bvo.writedate}</td>
+				<td style="width:10%">${bvo.no}</td>
+				<td style="width:40%"><a href="${pageContext.request.contextPath}/board/content.w9?no=${bvo.no}">${bvo.title}</a></td>
+				<td style="width:20%">${bvo.writer}</td>
+				<td style="width:10%">${bvo.hit}</td>
+				<td style="width:20%">${bvo.writedate}</td>
 			</tr>
 		</c:forEach>
 		</tbody>
