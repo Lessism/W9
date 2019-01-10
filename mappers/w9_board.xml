@@ -5,17 +5,20 @@
 <!--	 게시글 작성 	-->
 
 	<insert id="write" parameterType="bvo">
-		INSERT INTO
-		w9_board
+	
+		INSERT
+		INTO	w9_board
 			(writer, title, content)
 		VALUES
 			(#{writer}, #{title}, #{content})
+			
 	</insert>
 	
 	
 <!--	 게시글 수정 	-->
 
 	<update id="update" parameterType="bvo">
+	
 		UPDATE
 			w9_board
 		SET
@@ -23,29 +26,36 @@
 			content = #{content}
 		WHERE
 			no = #{no}
+			
 	</update>
 	
 	
 <!--	 게시글 삭제 	-->
 
 	<delete id="delete" parameterType="int">
+	
 		DELETE
 		FROM
 			w9_board
 		WHERE
 			no = #{no}
+			
 	</delete>
 	
 	
 <!--	 게시글 목록		-->
 
-	<select id="list" resultType="bvo">
+	<select id="list" parameterType="int" resultType="bvo">
+	
 		SELECT
 			no, writer, title, hit, writedate
 		FROM
 			w9_board
 		ORDER BY
 			no DESC
+		LIMIT
+			#{set}, #{end}
+			
 	</select>
 	
 	
