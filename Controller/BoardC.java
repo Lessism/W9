@@ -1,5 +1,6 @@
 package com.lessism.w9;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,9 +27,12 @@ public class BoardC {
 	
 //	게시글 목록
 		@RequestMapping(value="/list.w9")
-		public ModelAndView list(Model model) {
+		public ModelAndView list(@RequestParam("page") int page, Model model) {
+			Map<String, Object> map = new HashMap<String, Object>();
+			map.put("set", (page-1)*10);
+			map.put("end", 10);
 			model.addAttribute("totalpage", (bDAO.totalPost()-1)/10+1);
-			return new ModelAndView("/board/list", "list", bDAO.list());
+			return new ModelAndView("/board/list", "list", bDAO.list(map));
 		}
 		
 		
@@ -42,7 +46,7 @@ public class BoardC {
 		@RequestMapping(value="/write.w9", method=RequestMethod.POST)
 		public String write(@ModelAttribute("bvo") BoardVO bvo) {
 			bDAO.write(bvo);
-			return "redirect:/board/list.w9";
+			return "redirect:/board/list.w9?page=1";
 		}
 		
 		
@@ -58,7 +62,7 @@ public class BoardC {
 		@RequestMapping(value="/update.w9", method=RequestMethod.POST)
 		public String update(@ModelAttribute("bvo") BoardVO bvo) {
 			bDAO.update(bvo);
-			return "redirect:/board/list.w9";
+			return "redirect:/board/list.w9?page=1";
 		}
 		
 		
@@ -66,7 +70,7 @@ public class BoardC {
 		@RequestMapping(value="/delete.w9", method=RequestMethod.GET)
 		public String delete(@RequestParam("no") int no) {
 			bDAO.delete(no);
-			return "redirect:/board/list.w9";
+			return "redirect:/board/list.w9?page=1";
 		}
 		
 //	이전글, 다음글
@@ -83,7 +87,7 @@ public class BoardC {
 				map.put("no", map.get("nextno"));
 			}
 			if (bDAO.prevnext(map) == null) {
-				return "redirect:/board/list.w9";
+				return "redirect:/board/list.w9?page=1";
 			}
 			return "redirect:/board/content.w9?no="+bDAO.prevnext(map);
 		}
