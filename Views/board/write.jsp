@@ -25,7 +25,7 @@
 		</div>
 		<div class="ui center aligned container">
 			<input class="ui black button f k r" type="submit" value="작성">
-			<a class="ui button f k r" href="${pageContext.request.contextPath}/board/list.w9">목록</a>
+			<a class="ui button f k r" href="${pageContext.request.contextPath}/board/list.w9?page=1">목록</a>
 	</div>
 	</bvo:form>
 </section>
