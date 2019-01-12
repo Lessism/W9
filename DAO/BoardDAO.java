@@ -47,7 +47,7 @@ public class BoardDAO {
 	}
 	
 //	총 게시물
-	public int totalPost() {
-		return db.selectOne("Board.totalpost");
+	public int totalPost(Map<String, Object> map) {
+		return db.selectOne("Board.totalpost", map);
 	}
 }
