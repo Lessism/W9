@@ -27,11 +27,25 @@ public class BoardC {
 	
 //	게시글 목록
 		@RequestMapping(value="/list.w9")
-		public ModelAndView list(@RequestParam("page") int page, Model model) {
+		public ModelAndView list(
+				@RequestParam(value="page", defaultValue="1") int page,
+				@RequestParam(value="type", required=false) String type,
+				@RequestParam(value="keyword", required=false) String keyword,
+				Model model
+				) {
+			
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("set", (page-1)*10);
 			map.put("end", 10);
-			model.addAttribute("totalpage", (bDAO.totalPost()-1)/10+1);
+			if (type != null && keyword != "") {
+				map.put("type", type);
+				map.put("search", keyword);
+			}
+			
+			model.addAttribute("page", page);
+			model.addAttribute("type", type);
+			model.addAttribute("keyword", keyword);
+			model.addAttribute("totalpage", (bDAO.totalPost(map)-1)/10+1);
 			return new ModelAndView("/board/list", "list", bDAO.list(map));
 		}
 		
