@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ include file="../include/header.jsp" %>
 <%@ taglib prefix="bvo" uri="http://www.springframework.org/tags/form" %>
 
-<jsp:include page="../include/header.jsp"/>
 <section class="ui black segment text container">
-	<bvo:form class="ui form" modelAttribute="bvo" action="${pageContext.request.contextPath}/board/write.w9" method="post">
+	<bvo:form class="ui form" modelAttribute="bvo" action="${path}/board/write.w9" method="post">
 		<div class="ui two fields">
 			<div class="ui field">
 				<h1 class="ui center aligned header f k r">게시글 작성</h1>
@@ -25,7 +25,7 @@
 		</div>
 		<div class="ui center aligned container">
 			<input class="ui black button f k r" type="submit" value="작성">
-			<a class="ui button f k r" href="${pageContext.request.contextPath}/board/list.w9?page=1">목록</a>
+			<a class="ui button f k r" href="${path}/board/list.w9?page=1">목록</a>
 	</div>
 	</bvo:form>
 </section>
