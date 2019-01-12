@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
 <mapper namespace="Board">
+
 
 <!--	 게시글 작성 	-->
 
 	<insert id="write" parameterType="bvo">
 	
 		INSERT
-		INTO	w9_board
-			(writer, title, content)
-		VALUES
-			(#{writer}, #{title}, #{content})
+		INTO
+			w9_board
+				(writer, title, content)
+			VALUES
+				(#{writer}, #{title}, #{content})
 			
 	</insert>
 	
@@ -45,12 +49,16 @@
 	
 <!--	 게시글 목록		-->
 
-	<select id="list" parameterType="int" resultType="bvo">
+	<select id="list" parameterType="map" resultType="bvo">
 	
 		SELECT
 			no, writer, title, hit, writedate
 		FROM
 			w9_board
+	<if test="type != null and search != null">
+		WHERE
+			${type} LIKE '%${search}%'
+	</if>
 		ORDER BY
 			no DESC
 		LIMIT
@@ -85,10 +93,18 @@
 	
 <!-- 	총 게시물	 -->
 
-	<select id="totalpost" resultType="int">
+	<select id="totalpost" parameterType="map" resultType="int">
+	
 		SELECT
 			COUNT(no) totalpost
 		FROM
 			w9_board
+	<if test="type != null and search != null">
+		WHERE
+			${type} LIKE '%${search}%'
+	</if>
+		
 	</select>
+	
+	
 </mapper>
