@@ -58,27 +58,9 @@ public class MemberC {
 	}
 	
 	
-//  로그인, 로그아웃
+//  로그인
 	@RequestMapping(value="/login.w9", method=RequestMethod.GET)
 	public ModelAndView Login() {
 		return new ModelAndView("member/login", "mvo", new MemberVO());
-	}
-	
-	@RequestMapping(value="/login.w9", method=RequestMethod.POST)
-	public String Login(@ModelAttribute("mvo") MemberVO mvo, HttpSession session) {
-		mvo = mdao.login(mvo);
-		if (mvo != null) {
-			session.setAttribute("login", 1);
-			session.setAttribute("info", mvo);
-			return "redirect:/";
-		} else {
-			return "redirect:/member/login.w9";
-		}
-	}
-	
-	@RequestMapping(value="/logout.w9")
-	public String Logout(HttpSession session) {
-		session.invalidate();
-		return "redirect:/";
 	}
 }
