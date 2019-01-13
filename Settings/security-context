@@ -1,9 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
 <sec:http use-expressions="true">
 	<sec:access-denied-handler error-page="/error_403.w9"/>
 	<sec:intercept-url pattern="/**" access="permitAll"/>
 	<sec:form-login
 		login-page="/member/login.w9"
-		login-processing-url="/member/login_process.w9"
 		default-target-url="/"
 		authentication-failure-url="/member/login.w9?error" 
 		username-parameter="id" 
@@ -15,7 +21,6 @@
 </sec:http>
 <sec:authentication-manager>
 	<sec:authentication-provider user-service-ref="userService">
-		<sec:password-encoder hash="bcrypt"/>
 	</sec:authentication-provider>
 </sec:authentication-manager>
 
