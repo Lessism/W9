@@ -27,6 +27,6 @@
 	<select id="login" parameterType="mvo" resultType="mvo">
 		SELECT id, nick, email, joindate
 		FROM w9_member
-		WHERE id = #{id} AND pw = #{pw}
+		WHERE id = #{id}
 	</select>
 </mapper>
