@@ -40,4 +40,4 @@
 		</div>
 	</mvo:form>
 </section>
-<jsp:include page="../include/header.jsp"/>
+<jsp:include page="../include/footer.jsp"/>
