@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 import com.lessism.w9.vo.MemberVO;
+import com.lessism.w9.vo.SecurityVO;
 
 public class SecurityDAO implements UserDetailsService {
 	
@@ -16,6 +17,7 @@ public class SecurityDAO implements UserDetailsService {
 	private SqlSession db;
 	private HttpSession session;
 	private MemberVO mvo;
+	private SecurityVO svo;
 	
 	public SecurityDAO(SqlSession db) {
 		super();
