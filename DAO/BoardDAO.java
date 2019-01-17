@@ -11,7 +11,6 @@ import com.lessism.w9.vo.BoardVO;
 
 @Service
 public class BoardDAO {
-	
 	@Autowired
 	private SqlSession db;
 	
